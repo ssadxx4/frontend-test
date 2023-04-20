@@ -1,0 +1,167 @@
+<div class="container">
+  <mat-spinner class="custom-spinner center" *ngIf="initStatus == false"></mat-spinner>
+  <div style="border: 1pt solid;min-height: 100vh;" *ngIf="initStatus == true">
+    <div style="border-bottom: 1pt solid;background-color: #d1cbcb;">
+      <h1 style="padding-left: 2%;">PIPING INFOMATION</h1>
+    </div><br>
+    <form [formGroup]="pipinfInfo">
+    <div class="d-flex justify-content-between mx-2">
+      <div class="col-2" style="margin-right: -3%;">
+        <b>Line number</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="line_number">
+      </div>
+      <div class="col-2" style="padding-left: 5px;margin-right: -3%;">
+        <b>Location</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="location">
+      </div>
+    </div>
+    <br>
+    <div class="d-flex justify-content-between mx-2">
+      <div class="col-2" style="margin-right: -3%;">
+        <b>From</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="from_info">
+      </div>
+      <div class="col-2" style="padding-left: 5px;margin-right: -3%;">
+        <b>To</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="to_info">
+      </div>
+    </div>
+
+    <br>
+    <div class="d-flex justify-content-between mx-2">
+      <div class="col-2" style="margin-right: -3%;">
+        <b>Drawing number</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="drawing_number">
+      </div>
+      <div class="col-2" style="padding-left: 5px;margin-right: -3%;">
+        <b>Service</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="service">
+      </div>
+    </div>
+
+    <br>
+    <div class="d-flex justify-content-between mx-2">
+      <div class="col-2" style="margin-right: -3%;">
+        <b>Material</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="material">
+      </div>
+      <div class="col-2" style="padding-left: 5px;margin-right: -3%;">
+        <b>Inservice date</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" readonly [value]="today|date: 'yyyy-MM-dd'">
+      </div>
+      <!-- <div class="col-3">
+        <input type="text" class="form-control">
+        <input type="text" class="form-control" [matDatepicker]="picker">
+      </div>
+      <div class="col-1">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div> -->
+    </div>
+
+    <br>
+    <div class="d-flex justify-content-between mx-2">
+      <div class="col-2" style="margin-right: -3%;">
+        <b>Pipe size</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="pipe_size">
+      </div>
+      <div class="col-2" style="padding-left: 5px;margin-right: -3%;">
+        <b>Original thickness</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="original_thickness">
+      </div>
+    </div>
+
+    <br>
+    <div class="d-flex justify-content-between mx-2">
+      <div class="col-2" style="margin-right: -3%;">
+        <b>Stress</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="stress">
+      </div>
+      <div class="col-2" style="padding-left: 5px;margin-right: -3%;">
+        <b>Joint efficiency</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="joint_efficiency">
+      </div>
+    </div>
+
+    <br>
+    <div class="d-flex justify-content-between mx-2">
+      <div class="col-2" style="margin-right: -3%;">
+        <b>CA</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="ca">
+      </div>
+      <div class="col-2" style="padding-left: 5px;margin-right: -3%;">
+        <b>Design life</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="design_life">
+      </div>
+    </div>
+
+    <br>
+    <div class="d-flex justify-content-between mx-2">
+      <div class="col-2" style="margin-right: -3%;">
+        <b>Design pressure</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="design_pressure">
+      </div>
+      <div class="col-2" style="padding-left: 5px;margin-right: -3%;">
+        <b>Operating pressure</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="operating_pressure">
+      </div>
+    </div>
+
+    <br>
+    <div class="d-flex justify-content-between mx-2">
+      <div class="col-2" style="margin-right: -3%;">
+        <b>Design temperature</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="design_temperature">
+      </div>
+      <div class="col-2" style="padding-left: 5px;margin-right: -3%;">
+        <b>Operating temperature</b>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control" formControlName="operating_temperature">
+      </div>
+    </div>
+    <br>
+    <div class="text-center">
+      <div class="btn-group">
+        <button class="btn btn-success mx-2" style="border-radius: 30px;" (click)="btn_submit()">Submit</button>
+        <button class="btn btn-danger" style="border-radius: 30px;" (click)="btn_Cancel()">Cancel</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+

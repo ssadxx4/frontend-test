@@ -68,7 +68,8 @@
               "browserTarget": "No2:build:production"
             },
             "development": {
-              "browserTarget": "No2:build:development"
+              "browserTarget": "No2:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -100,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e378c29d-c865-4856-9fcd-3cddecf8b2f7"
   }
 }
