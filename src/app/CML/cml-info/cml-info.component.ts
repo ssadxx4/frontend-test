@@ -339,7 +339,7 @@ export class CmlInfoComponent {
     let i:number
     let body = new URLSearchParams
     let line_num:any = localStorage.getItem('linenum')
-    this.getservice.GET("http://phumnt03.ap-southeast-1.elasticbeanstalk.com/apiapi/deleteByLineNumberCML/"+line_num).then(() => {
+    this.getservice.GET("http://phumnt03.ap-southeast-1.elasticbeanstalk.com/api/deleteByLineNumberCML/"+line_num).then(() => {
       for(i=0;i<=this.cml.value.cml_info.length-1;i++){
         console.log(i)
         body.set('line_number',line_num)
@@ -349,7 +349,7 @@ export class CmlInfoComponent {
         body.set('design_thickness',this.cml_info().at(i).get('design_thickness')?.value)
         body.set('structural_thickness',this.cml_info().at(i).get('structural_thickness')?.value)
         body.set('required_thickness',this.cml_info().at(i).get('required_thickness')?.value)
-        this.postservice.POST('http://phumnt03.ap-southeast-1.elasticbeanstalk.com/apiapi/insertcml',body)
+        this.postservice.POST('http://phumnt03.ap-southeast-1.elasticbeanstalk.com/api/insertcml',body)
         if(i == this.cml.value.cml_info.length-1){
             window.alert("Success")
             this.router.navigateByUrl('')
